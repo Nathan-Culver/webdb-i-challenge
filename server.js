@@ -1,8 +1,8 @@
 const express = require('express');
 
-const db = require('./data/accounts-model');
-
 const server = express();
+
+const db = require('./data/accounts-model.js');
 
 server.use(express.json());
 
@@ -19,7 +19,7 @@ server.get('/api/budget', async (req, res) => {
       res.status(200).json(budget);
     } catch (error) {
       res.status(500).json({
-        message: 'Error: Cannot retrieve the budgets',
+        message: 'Error: Cannot retrieve the budgets.',
       });
     }
 });
@@ -31,7 +31,7 @@ server.get('/api/budget/:id', async (req, res) => {
       res.status(200).json(budget);
     } catch (error) {
       res.status(500).json({
-        message: 'Error: Cannot retrieve the budget',
+        message: 'Error: Cannot retrieve the budget.',
       });
     }
 });
@@ -42,7 +42,7 @@ server.post('/api/budget', async (req, res) => {
       res.status(201).json(account);
     } catch (error) {
       res.status(500).json({
-        message: 'Error: Cannot retrieve the account',
+        message: 'Error: Cannot retrieve the account.',
       });
     }
 });
@@ -54,11 +54,11 @@ server.put('/api/budget/:id', async (req, res) => {
       if (account) {
         res.status(200).json(account);
       } else {
-        res.status(404).json({ message: 'The account could not be found' });
+        res.status(404).json({ message: 'The account could not be found.' });
       }
     } catch (error) {
       res.status(500).json({
-        message: 'Error: Cannot retrieve the account',
+        message: 'Error: Cannot retrieve the account.',
       });
     }
 });
